@@ -24,6 +24,6 @@ jobs:
         with:
           push: true
           tags: julioguirola/node-test:latest
-    #   -
-    #     name: Trigger Deployment
-    #     run: ${{ secrets.DEPLOY_TRIGGER_COMMAND }}
+      -
+        name: Trigger Deployment
+        run: ${{ secrets.DEPLOY_TRIGGER_COMMAND }}
