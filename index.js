@@ -14,7 +14,7 @@ const BODY = {
 
 while (true) {
     const res = await fetch(AI_API_URL, {
-        body: BODY,
+        body: JSON.stringify(BODY),
         headers: {
             "Content-Type": "application/json",
             "x-goog-api-key": AI_API_KEY,
