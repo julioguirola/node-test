@@ -11,9 +11,11 @@ const BODY = {
       }
     ]
   }
+let runnig = false;
 
-while (true) {
-    const res = await fetch(AI_API_URL, {
+setInterval(async () => {
+  if (runnig) return;
+  const res = await fetch(AI_API_URL, {
         body: JSON.stringify(BODY),
         headers: {
             "Content-Type": "application/json",
@@ -24,10 +26,9 @@ while (true) {
 
     if (res.status !== 200) {
         console.log("Error status:", res.status)
-        continue;
+        return;
     }
 
     const data = await res.json()
     console.log(data.candidates[0].content.parts[0].text)
-    await new Promise(resolve => setTimeout(resolve, 2000));
-}
+}, 10 * 1000)
