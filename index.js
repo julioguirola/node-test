@@ -22,7 +22,12 @@ while (true) {
         method: "POST",
     })
 
+    if (res.status !== 200) {
+        console.log("Error status:", res.status)
+        continue;
+    }
+
     const data = await res.json()
-    console.log(data)
+    console.log(data.candidates[0].content.parts[0].text)
     await new Promise(resolve => setTimeout(resolve, 2000));
 }
