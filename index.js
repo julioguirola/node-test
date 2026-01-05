@@ -5,7 +5,7 @@ const BODY = {
       {
         "parts": [
           {
-            "text": "Dime una curiosidad"
+            "text": "Dime una curiosidad."
           }
         ]
       }
